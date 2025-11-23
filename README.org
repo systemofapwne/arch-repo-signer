@@ -1,0 +1,6 @@
+* Arch repo signer
+A simple Flask app in a Docker container, that dynamically signs a (self hosted) arch linux repo on the fly.
+This project has been developed to assist [[https://github.com/Lukas-Heiligenbrunner/AURCache][AURCache]] until it natively supports signing.
+
+** Configuration and deployment
+  Take =compose.example.yml= as an example and build your container deployment around it.

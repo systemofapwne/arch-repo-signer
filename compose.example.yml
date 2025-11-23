@@ -1,0 +1,15 @@
+services:
+  signer:
+    container_name: signer
+    image: ghcr.io/systemofapwne/arch-repo-signer:master
+    ports:
+      - '5000:5000'
+    # In case, that you need to change the path to the repo, signatures and GPG private key inside the container, configure them below
+    # environment:
+    #   - FLASK_PATH_GPG_KEY=/signing.key
+    #   - FLASK_PATH_REPO=/repo
+    #   - FLASK_PATH_SIGS=/sigs
+    volumes:
+      - /host/path/to/signing.key:/signing.key  # Path to the private repo signing key.
+      - /host/path/to/repo:/repo:ro             # Path to the repo files from e.g. AURCache
+      #- /host/path/to/sigs:/sigs:rw            # Optional: Volume to store the package signatures

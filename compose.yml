@@ -1,0 +1,10 @@
+services:
+  signer:
+    container_name: signer
+    build: .
+    ports: 
+      - '5000:5000'
+    volumes:
+      - ./signing.key:/signing.key
+      - ./repo:/repo:ro
+      - ./sigs:/sigs:rw
